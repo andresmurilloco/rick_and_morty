@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap');
+
+body{
+    background-color: black;
+}
+
+.enlaces{
+    color: #40B5CB;
+    font-family: 'Covered By Your Grace', cursive;
+    font-size: 30px;
+}
+
+.enlaces:hover{
+    text-shadow: 0px 0px 6px #D2E054;
+}
