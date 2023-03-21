@@ -1,7 +1,8 @@
 import React from 'react'
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const Capitulos = () => {
+  const [episodes, setEpisodes] = useState([])
     useEffect(() => {
         const consultarAPI = async()=>{
             const url= "https://rickandmortyapi.com/api/episode";
@@ -18,16 +19,24 @@ const Capitulos = () => {
                 link: episode.url,
                 created: episode.created,
             }
-            console.log(objeto);
             return objeto;
             } );
-            // setEpisodes(arrayEpisodes)
+            setEpisodes(arrayEpisodes)
         }
         consultarAPI();
         },[]);
 
   return (
-    <div>Capitulos</div>
+    <>
+     <div className='ml-24 mt-5 mr-24'>
+        <div>
+          <h1 className=' text-green-700 font-bold text-3xl'>Episodes</h1>
+        </div>
+        <div className='bg-white'>
+          <p>{episodes[1].name}</p>
+        </div>
+     </div>
+    </>
   )
 }
 
