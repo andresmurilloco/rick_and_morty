@@ -20,11 +20,11 @@ const Layout = () => {
         </div>
         <div>
             <aside className=' ml-24 mr-24 mt-5 flex justify-around bg-green-800 rounded-md shadow-md shadow-yellow-400'>
-              <Link to='/' class='enlaces'>Home</Link>
-              <Link to='/characters' class='enlaces'>Characters</Link>
-              <Link to='/episodes' class='enlaces'>Episodes</Link>
-              <Link to='/locations' class='enlaces'>Locations</Link>
-              <Link to='/about' class='enlaces' >About</Link>
+              <Link to='/' className='enlaces'>Home</Link>
+              <Link to='/characters' className='enlaces'>Characters</Link>
+              <Link to='/episodes' className='enlaces'>Episodes</Link>
+              <Link to='/locations' className='enlaces'>Locations</Link>
+              <Link to='/about' className='enlaces' >About</Link>
             </aside>
         </div>
         <Outlet/>
