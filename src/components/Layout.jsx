@@ -15,8 +15,8 @@ const Layout = () => {
   return (
     <>
         <div className='flex justify-center overflow-hidden'>
-            <Link to='/'><img src={Header} className=" max-w-sm max-h-40 " /></Link>
-            <Link to='/'><img src={Banner} className=" max-w-sm max-h-40" /></Link>
+            <Link to='/'><img src={Header} className=" max-w-sm max-h-40" /></Link>
+            <Link to='/'><img src={Banner} className=" max-w-sm max-h-40 max-[850px]:hidden" /></Link>
         </div>
         <div>
             <aside className=' ml-24 mr-24 mt-5 flex justify-around bg-green-800 rounded-md shadow-md shadow-yellow-400'>
@@ -35,9 +35,9 @@ const Layout = () => {
               <p>Forbidden any direct reproduction of the code used in this project.</p>
             </div>
             <div className='w-1/2 flex'>
-              <img src={Facebook} className=" max-w-sm max-h-10 "/>
-              <img src={Instagram} className=" max-w-sm max-h-10 "/>
-              <img src={Git} className=" max-w-sm max-h-10 "/><p className=' text-3xl'>@andrestech97</p>
+              <img src={Facebook} className=" max-h-8 "/>
+              <img src={Instagram} className=" max-h-8 "/>
+              <img src={Git} className=" max-h-8"/><p className=' text-2xl'>@andrestech97</p>
             </div>
           </aside>
         </div>
