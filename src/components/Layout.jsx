@@ -1,7 +1,9 @@
 import React from 'react'
+import { useState, useEffect } from 'react'
 import { Outlet, Link, useLocation } from 'react-router-dom'
 
 //Componentes
+import Menu from './Menu'
 
 //Imagenes
 import Banner from "../img/banner.png"
@@ -11,7 +13,6 @@ import Instagram from "../img/instagram.png"
 import Git from "../img/git.png"
 
 const Layout = () => {
-  const location = useLocation();
   return (
     <>
         <div className='flex justify-center overflow-hidden'>
@@ -19,13 +20,7 @@ const Layout = () => {
             <Link to='/'><img src={Banner} className=" max-w-sm max-h-40 max-[850px]:hidden" /></Link>
         </div>
         <div>
-            <aside className=' ml-24 mr-24 mt-5 flex justify-around bg-green-800 rounded-md shadow-md shadow-yellow-400'>
-              <Link to='/' className='enlaces'>Home</Link>
-              <Link to='/characters' className='enlaces'>Characters</Link>
-              <Link to='/episodes' className='enlaces'>Episodes</Link>
-              <Link to='/locations' className='enlaces'>Locations</Link>
-              <Link to='/about' className='enlaces' >About</Link>
-            </aside>
+            <Menu></Menu>
         </div>
         <Outlet/>
         <div>
