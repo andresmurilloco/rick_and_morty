@@ -1,6 +1,21 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { Outlet, Link, useLocation } from 'react-router-dom'
+import styled from '@emotion/styled'
+
+const Footer = styled.aside`
+  margin-left:94px;
+  margin-right: 94px;
+  display: flex;
+  margin-top:5px;
+  background-color: #02330a;
+  box-shadow: yellow;
+  border-radius: 5px;
+  @media (max-width:850px){
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+`
 
 //Componentes
 import Menu from './Menu'
@@ -24,7 +39,7 @@ const Layout = () => {
         </div>
         <Outlet/>
         <div>
-          <aside className='ml-24 mr-24 mt-5 flex bg-green-800 rounded-md shadow-md shadow-yellow-400'>
+          <Footer>
             <div className='w-1/2'>
               <p>Designed by Andrés Murillo</p>
               <p>Forbidden any direct reproduction of the code used in this project.</p>
@@ -34,7 +49,7 @@ const Layout = () => {
               <img src={Instagram} className=" max-h-8 "/>
               <img src={Git} className=" max-h-8"/><p className=' text-2xl'>@andrestech97</p>
             </div>
-          </aside>
+          </Footer>
         </div>
     </>
   )

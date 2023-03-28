@@ -36,7 +36,9 @@ const Personajes = () => {
     return (
         <>
         <div>
-            <Personaje personaje={arrayPersonajes}></Personaje>
+            {arrayPersonajes.map(personaje=>(
+                <Personaje personaje={personaje} key={personaje.id}></Personaje>
+            ))}
         </div>
         </>
     )
