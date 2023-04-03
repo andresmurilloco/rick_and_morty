@@ -12,6 +12,9 @@ import React from 'react'
 import { useEffect, useState } from 'react';
 import styled from '@emotion/styled'
 
+//Componentes
+import Aparicion from './Aparicion';
+
 const Parrafo = styled.p`
   margin-top: 5px;
   font-weight: bold;
@@ -37,7 +40,7 @@ const Personaje = ({personaje}) => {
           <div className='rounded-md flex bg-green-400 border-yellow-500 border-4 shadow-md shadow-orange-300 mt-5 p-3'>
             <div className='w-1/2 bg-yellow-600 rounded-md p-5 text-center'>
               <div className='bg-yellow-300 rounded-md'>
-                <h1 className='text-3xl font-bold font-gloria'>{name}</h1>
+                <h1 className='text-3xl font-bold font-gloria' key={id}>{name}</h1>
                 <img src={image} className={'rounded-md mx-auto m-5'}/>
                 <Parrafo>Status: <span className={textState}>{status}</span></Parrafo>
                 <Parrafo>Species: <span>{species}</span></Parrafo>
@@ -48,7 +51,7 @@ const Personaje = ({personaje}) => {
               <h1 className='text-3xl font-bold font-gloria'>Appearances</h1><br />
               {episode.map((episodio,i)=>{
                   return(
-                    <p>{episodio}</p>
+                    <Aparicion episodio={episodio}></Aparicion>
                   )
               })}
           </div>
