@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Episodios = ({episode}) => {
+const Capitulo = ({episode}) => {
     const {name,air_date,episodio,characters,link,created} = episode;
   return (
     <>
@@ -11,4 +11,4 @@ const Episodios = ({episode}) => {
   )
 }
 
-export default Episodios
+export default Capitulo

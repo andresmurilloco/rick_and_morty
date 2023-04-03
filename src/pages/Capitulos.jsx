@@ -1,8 +1,9 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
+import { importarEpisodio } from '../data/apiConnection';
 
 //Components
-import Episodios from '../components/Episodios';
+import Capitulo from '../components/Capitulo';
 
 const Capitulos = () => {
   const [episodes, setEpisodes] = useState([])
@@ -25,8 +26,6 @@ const Capitulos = () => {
           return objeto;
           } );
           setEpisodes(arrayEpisodes)
-          const arrayInfo = resultado.info.map(info =>{
-          })
         }
         consultarAPI();
         },[]);
@@ -39,7 +38,7 @@ const Capitulos = () => {
         </div>
         <div>
           {episodes.map(episode =>(
-                <Episodios episode={episode} key={episode.id}/>
+                <Capitulo episode={episode} key={episode.id}/>
               ))}
         </div>
         <div>
