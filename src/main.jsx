@@ -12,6 +12,7 @@ import Index from './pages/Index'
 import About from './pages/About'
 import Capitulos from './pages/Capitulos'
 import Personajes from './pages/Personajes'
+import Localizaciones from './pages/Localizaciones'
 
 const router = createBrowserRouter([{
   path:'/',
@@ -32,6 +33,10 @@ const router = createBrowserRouter([{
     {
       path:'/about',
       element:<About/>
+    },
+    {
+      path:'/locations',
+      element:<Localizaciones/>
     }
   ]
 }])
