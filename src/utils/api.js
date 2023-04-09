@@ -1,10 +1,12 @@
 import axios from "axios";
 
 const apiCharacters = axios.create({
+    method: 'get',
     baseUrl:'https://rickandmortyapi.com/api/character',
 })
 
 const apiEpisodes = axios.create({
+    method: 'get',
     baseUrl:'https://rickandmortyapi.com/api/episode',
 })
 
@@ -41,10 +43,13 @@ export async function ImportarLugares(){
         const objeto={
             id : ubicacion.id,
             titulo : ubicacion.name,
+            type: ubicacion.type,
+            dimension: ubicacion.dimension,
+            residents: ubicacion.residents,
+            url: ubicacion.url,
         }
         return objeto;
     })
-    console.log(arreglo);
-    return(arreglo);
+    return arreglo;
     });
 }

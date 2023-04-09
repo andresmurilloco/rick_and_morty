@@ -11,7 +11,6 @@ const Aparicion = ({episodio}) => {
         }
         ConsultarApi();
     }, [])
-    console.log(ImportarPersonaje);
   return (
     <div>Aparicion</div>
   )

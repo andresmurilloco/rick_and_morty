@@ -1,10 +1,28 @@
 import React from 'react'
-import { ImportarEpisodios, ImportarLugares, ImportarPersonaje } from '../utils/api'
+import { useState, useEffect } from 'react';
+import {ImportarLugares} from '../utils/api'
+import { importarLocalizaciones } from '../data/apiConnection';
+
+//Components
+import Localizacion from '../components/Localizacion';
 
 const Localizaciones = () => {
-    ImportarPersonaje();
+  const [localizaciones, setLocalizaciones] = useState([]);
+
+  useEffect(() => {
+    const ConsultarApi=async()=>{
+      setLocalizaciones(await importarLocalizaciones());
+    }
+    ConsultarApi();
+  }, [])
   return (
-    <div>Localizaciones</div>
+    <>
+      <div className='ml-24 mt-5 mr-24'>
+        {localizaciones.map(localizacion=>(
+          <Localizacion localizacion={localizacion} key={localizacion.id}></Localizacion>
+        ))}
+      </div>
+    </>
   )
 }
 

@@ -7,6 +7,7 @@ import Personaje from '../components/Personaje';
 
 const Personajes = () => {
     const [arrayPersonajes, setArrayPersonajes] = useState([]);
+    
     useEffect(() => {
         const ConsultarApi=async()=>{
             setArrayPersonajes(await importarPersonaje());

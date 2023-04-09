@@ -22,7 +22,7 @@ export async function importarPersonaje(){
     })
     return (arregloPersonajes);
 }
-//Axios
+
 export async function importarEpisodios(){
         const url= "https://rickandmortyapi.com/api/episode";
         const respuesta = await fetch(url);
@@ -41,6 +41,25 @@ export async function importarEpisodios(){
         return objeto;
         } );
         return(arrayEpisodes);        
+}
+
+export async function importarLocalizaciones(){
+    const url= "https://rickandmortyapi.com/api/location";
+    const respuesta = await fetch(url);
+    const resultado = await respuesta.json();
+
+    const arrayLocaciones = resultado.results.map(ubicacion =>{
+        const objeto={
+            id : ubicacion.id,
+            titulo : ubicacion.name,
+            type: ubicacion.type,
+            dimension: ubicacion.dimension,
+            residents: ubicacion.residents,
+            url: ubicacion.url,
+        }
+        return objeto;
+    });
+    return(arrayLocaciones);        
 }
 
 //Esta función extrae solo la info necesaria para la lista de apariciones en episode.
