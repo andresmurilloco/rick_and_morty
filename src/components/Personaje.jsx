@@ -12,8 +12,8 @@ import React from 'react'
 import { useEffect, useState } from 'react';
 import styled from '@emotion/styled'
 
-//Componentes
-import Aparicion from './Aparicion';
+//Hooks
+import ListarAparicion from '../hooks/ListarAparicion';
 
 const Parrafo = styled.p`
   margin-top: 5px;
@@ -48,10 +48,10 @@ const Personaje = ({personaje}) => {
               </div>
             </div>
             <div className='w-1/2 text-center'>
-              <h1 className='text-3xl font-bold font-gloria'>Appearances</h1><br />
+              <h1 className='text-3xl font-bold font-gloria'>Appearances</h1><br/>
               {episode.map((episodio,i)=>{
                   return(
-                    <Aparicion episodio={episodio}></Aparicion>
+                    <ListarAparicion episodio={episodio}></ListarAparicion>
                   )
               })}
           </div>

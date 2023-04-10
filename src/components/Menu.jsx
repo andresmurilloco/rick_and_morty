@@ -29,7 +29,7 @@ const Menu = () => {
                 : ""}
             </aside>
             <aside className='aside-menu-extendido'>
-                <nav className=' ml-24 mr-24 mt-5 flex justify-around bg-green-800 rounded-md shadow-md shadow-yellow-400'>
+                <nav className='menu-animacion'>
                     <Link to='/' className='menu-extendido'>Home</Link>
                     <Link to='/characters' className='menu-extendido'>Characters</Link>
                     <Link to='/episodes' className='menu-extendido'>Episodes</Link>

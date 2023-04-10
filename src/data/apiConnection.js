@@ -68,5 +68,5 @@ export async function importarEpisodio(episodio){
     const respuesta = await fetch(url);
     const resultado = await respuesta.json();
 
-    return resultado;
+    return (resultado);
 }

@@ -6,6 +6,27 @@
     display: block;
 }
 
+.menu-animacion{
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-around;
+    background-color: #02330A;
+    border-radius: 5px;
+    animation-name: colorSwitch;
+    animation-duration: 12s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes colorSwitch {
+    0% {box-shadow:0px 0px 20px 5px #12B0C9;}
+    25%{box-shadow:0px 0px 20px 5px #C9DD5D;}
+    50%{box-shadow:0px 0px 20px 5px #41714A}
+    75%{box-shadow:0px 0px 20px 5px #7ABA46}
+    100%{box-shadow:0px 0px 20px 5px #12B0C9;}
+}
+
 .menu-extendido{
     color: #40B5CB;
     font-family: 'Covered By Your Grace', cursive;
