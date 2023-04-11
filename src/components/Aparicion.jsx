@@ -6,7 +6,7 @@ const Aparicion = ({objeto}) => {
   return (
     <>
         <div>
-            <p></p>
+            <p>Aparicion.jsx</p>
         </div>  
     </>
   )

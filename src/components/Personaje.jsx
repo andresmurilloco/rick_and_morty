@@ -47,7 +47,7 @@ const Personaje = ({personaje}) => {
                 <Parrafo>{type}</Parrafo>
               </div>
             </div>
-            <div className='w-1/2 text-center'>
+            <div className='w-1/2 text-center h-24'>
               <h1 className='text-3xl font-bold font-gloria'>Appearances</h1><br/>
               {episode.map((episodio,i)=>{
                   return(
