@@ -10,7 +10,7 @@ const ListarAparicion = ({episodio}) => {
   return (
     <>
       <div>
-        <Aparicion episodio={episodio}></Aparicion>
+        <Aparicion episodio = {episodio}></Aparicion>
       </div>
     </>
   )
