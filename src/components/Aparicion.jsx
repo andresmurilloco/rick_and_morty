@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import { useState, useReact } from "react";
 import { importarEpisodio } from "../data/apiConnection";
+import '../css/textSwitcher.css'
 
-const Aparicion = ({ episodio }) => {
+const Aparicion = ({ episodio}) => {
   const [name, setName] = useState("");
   const [id, setId] = useState("");
   const [url, setUrl] = useState("");
@@ -16,11 +17,10 @@ const Aparicion = ({ episodio }) => {
     };
     ConsultarApi();
   }, []);
-  console.log(name);
-
+  
   return (
     <>
-      <div>
+      <div className="font-gloria text-xl">
         <a href={url}>{name}</a>
       </div>
     </>

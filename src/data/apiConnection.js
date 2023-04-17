@@ -1,5 +1,5 @@
-export async function importarPersonaje(){
-    const url = 'https://rickandmortyapi.com/api/character';
+export async function importarPersonaje(pagina){
+    const url = `https://rickandmortyapi.com/api/character/?page=${pagina}`;
     const respuesta = await fetch(url);
     const resultado = await respuesta.json();
 
@@ -21,6 +21,15 @@ export async function importarPersonaje(){
         return objeto;
     })
     return (arregloPersonajes);
+}
+
+export async function importarInfoPersonaje(pagina){
+    const url = `https://rickandmortyapi.com/api/character/?page=${pagina}`;
+    const respuesta = await fetch(url);
+    const resultado = await respuesta.json();
+    const paginas =resultado.info.pages;
+
+    return paginas;
 }
 
 export async function importarEpisodios(){

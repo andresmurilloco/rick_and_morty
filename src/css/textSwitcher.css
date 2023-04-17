@@ -1,0 +1,9 @@
+.ocultarParrafo{
+    height: 74px;
+    overflow: hidden;
+}
+
+.ocultarAparicion{
+    height: 390px;
+    overflow: hidden;
+}

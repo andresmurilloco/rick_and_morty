@@ -1,6 +1,5 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-import {ImportarLugares} from '../utils/api'
 import { importarLocalizaciones } from '../data/apiConnection';
 
 //Components

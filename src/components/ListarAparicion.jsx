@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { importarEpisodio } from '../data/apiConnection'
 
 //Components
-import Aparicion from '../components/Aparicion'
+import Aparicion from './Aparicion'
 
 const ListarAparicion = ({episodio}) => {
   
