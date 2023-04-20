@@ -8,10 +8,14 @@ const Capitulo = ({episode}) => {
       <div className='rounded-md bg-green-400 border-yellow-500 border-4 shadow-md shadow-orange-300 mt-5'>
         <h1 className='text-3xl font-bold font-gloria' key={id}>{episodio} - {name}</h1>
       </div>
-      <div className='flex bg-white'>
+      <div className='flex flex-wrap bg-white'>
         {characters.map(character=>{
           return(
-            <p>{character}</p>
+            <div>
+              <p>Rick Morty</p>
+              <p>Imagen X</p>
+              <p>Location</p>
+            </div>
           )
         })}
       </div>
