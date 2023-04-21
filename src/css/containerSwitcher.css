@@ -1,0 +1,11 @@
+.hidden{
+    display: none;
+}
+
+.show{
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+background-color: #41714A;
+padding: 20px;
+}
