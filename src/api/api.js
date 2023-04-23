@@ -14,3 +14,13 @@ export async function getEpisodesInfo(){
     const result = await axios(`https://rickandmortyapi.com/api/episode/`)
     return(result.data.info.pages);
 }
+
+export async function getLocationsInfo(){
+    const result = await axios(`https://rickandmortyapi.com/api/location/`)
+    return(result.data.info.pages);
+}
+
+export async function getLocations(page){
+    const result = await axios(`https://rickandmortyapi.com/api/location/?page=${page}`)
+    return(result.data.results);
+}

@@ -14,14 +14,12 @@ const CapituloAparicion = ({key, character}) => {
   const {id, name, image, url} = personaje;  
 
   return (
-    <>
-      <div className='' key={id}>
-        <a href={url}>
+    <div className='p-2'>
+      <a href={url}>
         <img src={image} alt="" srcset="" className='rounded-md border-2 border-yellow-500'/>
-        <h1 className='font-gloria text-xl mb-5 text-center'>{name}</h1>
-        </a>
-      </div>
-    </>
+        <h1 className='font-gloria text-xl mb-5 '>{name}</h1>
+      </a>
+    </div>
   )
 }
 
