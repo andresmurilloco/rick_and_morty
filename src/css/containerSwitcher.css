@@ -15,3 +15,12 @@ padding: 20px;
     background-color: #41714A;
     padding: 20px;
 }
+
+.hidden-location{
+    display: none;
+}
+
+.compact-resident{
+    height: 13px;
+    overflow: hidden;
+}

@@ -1,6 +1,9 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
 import { getCharacterApi } from '../api/api'
+import { Link } from 'react-router-dom'
+
+import Detallado from '../pages/Detallado'
 
 const CapituloAparicion = ({key, character}) => {
   const [personaje, setPersonaje] = useState({})
@@ -16,10 +19,10 @@ const CapituloAparicion = ({key, character}) => {
   return (
     <>
       <div className='' key={id}>
-        <a href={url}>
-        <img src={image} alt="" srcset="" className='rounded-md border-2 border-yellow-500'/>
-        <h1 className='font-gloria text-xl mb-5 text-center'>{name}</h1>
-        </a>
+        <Link to={`/detailed/${id}`}>
+          <img src={image} alt="" srcset="" className='rounded-md border-2 border-yellow-500'/>
+          <h1 className='font-gloria text-xl mb-5 text-center'>{name}</h1>
+        </Link>
       </div>
     </>
   )

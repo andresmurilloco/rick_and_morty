@@ -21,7 +21,7 @@ const Aparicion = ({ episodio}) => {
   return (
     <>
       <div className="font-gloria text-xl">
-        <a href={url}>{name}</a>
+        <p>{name}</p>
       </div>
     </>
   );

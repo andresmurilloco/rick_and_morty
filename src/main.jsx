@@ -13,6 +13,7 @@ import About from './pages/About'
 import Capitulos from './pages/Capitulos'
 import Personajes from './pages/Personajes'
 import Localizaciones from './pages/Localizaciones'
+import Detallado from './pages/Detallado'
 
 const router = createBrowserRouter([{
   path:'/',
@@ -37,7 +38,11 @@ const router = createBrowserRouter([{
     {
       path:'/locations',
       element:<Localizaciones/>
-    }
+    },
+    {
+      path:'/detailed/:id',
+      element:<Detallado/>
+    },
   ]
 }])
 

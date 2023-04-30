@@ -1,0 +1,17 @@
+.welcome{
+    margin-left:32%;
+    position: absolute;
+    font-size: 90px;
+    animation-name: textColorSwitch;
+    animation-duration: 12s;
+    animation-iteration-count: infinite;
+    font-family: 'Covered By Your Grace', cursive;
+}
+
+@keyframes textColorSwitch {
+    0% {text-shadow:0px 0px 10px #12B0C9; color: #C9DD5D;}
+    25%{text-shadow:0px 0px 10px #C9DD5D; color: #41714A;}
+    50%{text-shadow:0px 0px 10px #41714A; color: white;}
+    75%{text-shadow:0px 0px 10px #7ABA46; color:#12B0C9;}
+    100%{text-shadow:0px 0px 10px #12B0C9; color: #C9DD5D;}
+}

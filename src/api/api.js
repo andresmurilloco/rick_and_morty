@@ -24,3 +24,8 @@ export async function getLocations(page){
     const result = await axios(`https://rickandmortyapi.com/api/location/?page=${page}`)
     return(result.data.results);
 }
+
+export async function getDetailedCharacter(page){
+    const result = await axios(`https://rickandmortyapi.com/api/character/${page}`);
+    return(result.data);
+}
