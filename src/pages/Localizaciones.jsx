@@ -1,9 +1,10 @@
 import React from 'react'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import { getLocationsInfo, getLocations } from '../api/api';
 
 //Components
-import Localizacion from '../components/Localizacion';
+import Cargando from '../components/Cargando'
+const Localizacion = lazy(()=>import('../components/Localizacion'))
 
 const Localizaciones = () => {
   const [localizaciones, setLocalizaciones] = useState([]);
@@ -62,7 +63,9 @@ const Localizaciones = () => {
           </div>
         </div>
         {localizaciones.map(localizacion=>(
-          <Localizacion localizacion={localizacion} key={localizacion.id}></Localizacion>
+          <Suspense fallback={Cargando}>
+            <Localizacion localizacion={localizacion} key={localizacion.id}></Localizacion>
+          </Suspense>
         ))}
       </div>
     </>

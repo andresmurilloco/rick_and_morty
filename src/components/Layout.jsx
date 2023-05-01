@@ -17,6 +17,7 @@ import Instagram from "../img/instagram.png"
 import Git from "../img/git.png"
 
 const Layout = () => {
+  const usuarioRedes = "@andresdev25"
   return (
     <>
         <div className='flex justify-center overflow-hidden'>
@@ -29,14 +30,20 @@ const Layout = () => {
         <Outlet/>
         <div>
           <div className='footer'>
-            <div className='w-1/2'>
+            <div className='w-1/2 text-sm text-white font-gloria'>
               <p>Designed by Andrés Murillo</p>
               <p>Forbidden any direct reproduction of the code used in this project.</p>
             </div>
-            <div className='w-1/2 flex'>
-              <img src={Facebook} className=" max-h-8 "/>
-              <img src={Instagram} className=" max-h-8 "/>
-              <img src={Git} className=" max-h-8"/><p className=' text-2xl'>@andrestech97</p>
+            <div className='w-1/2 flex-col text-white font-gloria'>
+              <div className='flex flex-row '>
+                <img src={Facebook} className="footer-logo "/><p>{usuarioRedes}</p>
+              </div>
+              <div className='flex flex-row'>
+                <img src={Instagram} className="footer-logo "/><p>{usuarioRedes}</p>
+              </div>
+              <div className='flex flex-row'>
+                <img src={Git} className="footer-logo"/><p>{usuarioRedes}</p>
+              </div>
             </div>
           </div>
         </div>

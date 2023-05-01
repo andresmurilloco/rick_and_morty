@@ -35,7 +35,7 @@ const Detallado = () => {
             </div>
           </div>
           <Link to={'/characters'}>
-            <button className='bg-green-800 rounded-md w-24 h-10 hover:bg-green-500'>Volver</button>
+            <button className='bg-green-800 rounded-md w-24 h-10 hover:bg-green-500'>Go back</button>
           </Link>
         </div>
       </div>

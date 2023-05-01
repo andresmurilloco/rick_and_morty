@@ -1,10 +1,10 @@
 import React from "react";
-import { useEffect, useState } from "react";
-import { importarEpisodios } from "../data/apiConnection";
+import { useEffect, useState, lazy, Suspense } from "react";
 import { getEpisodes, getEpisodesInfo } from "../api/api";
 
 //Components
-import Capitulo from "../components/Capitulo";
+const Capitulo = lazy(()=>import ("../components/Capitulo"))
+import Cargando from "../components/Cargando";
 
 const Capitulos = () => {
   const [episodes, setEpisodes] = useState([]);
@@ -64,7 +64,9 @@ const Capitulos = () => {
         </div>
         <div>
           {episodes.map((episode) => (
-            <Capitulo episodio={episode} key={episode.id} />
+            <Suspense fallback={Cargando}>
+              <Capitulo episodio={episode} key={episode.id} />
+            </Suspense>
           ))}
         </div>
         <div></div>

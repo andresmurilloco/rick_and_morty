@@ -1,12 +1,13 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense, lazy } from "react";
 import {
   importarInfoPersonaje,
   importarPersonaje,
 } from "../data/apiConnection";
 
 //Componentes
-import Personaje from "../components/Personaje";
+import Cargando from '../components/Cargando'
+const Personaje = lazy(()=>import ("../components/Personaje"))
 
 const Personajes = () => {
   const [arrayPersonajes, setArrayPersonajes] = useState([]);
@@ -57,7 +58,9 @@ const Personajes = () => {
       </div>
       <div>
         {arrayPersonajes.map((personaje) => (
-          <Personaje personaje={personaje} key={personaje.id}></Personaje>
+          <Suspense fallback={Cargando}>
+            <Personaje personaje={personaje} key={personaje.id}></Personaje>
+          </Suspense>
         ))}
       </div>
       <div className="font-gloria flex justify-between ml-[68%] mr-[8%] bg-green-800 rounded-md border-2 border-yellow-500 p-1 mt-[-20px] mb-5">

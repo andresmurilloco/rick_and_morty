@@ -14,6 +14,7 @@ import Capitulos from './pages/Capitulos'
 import Personajes from './pages/Personajes'
 import Localizaciones from './pages/Localizaciones'
 import Detallado from './pages/Detallado'
+import Cargando from './components/Cargando'
 
 const router = createBrowserRouter([{
   path:'/',
@@ -42,6 +43,10 @@ const router = createBrowserRouter([{
     {
       path:'/detailed/:id',
       element:<Detallado/>
+    },
+    {
+      path:'/loading',
+      element:<Cargando/>
     },
   ]
 }])
