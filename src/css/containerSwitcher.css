@@ -20,7 +20,26 @@ padding: 20px;
     display: none;
 }
 
-.compact-resident{
-    height: 13px;
+.compact-residents{
+    height: 705px;
+    padding-left: 3%;
     overflow: hidden;
+    width: 66.666667%;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.show-residents{
+    padding-left: 3%;
+    width: 66.666667%;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+@media (max-width:1210px) {
+    .show-residents, .compact-residents{
+        padding-left: 15%;
+    }
 }
