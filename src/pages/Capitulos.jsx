@@ -42,26 +42,24 @@ const Capitulos = () => {
 
   return (
     <>
+      <div className="contenedor-top">
+        <button
+          className="boton"
+          onClick={() => previousPage()}
+        >
+          Previous
+        </button>
+        <p className="page-counter">
+          Page {page} of {pageCount}
+        </p>
+        <button
+          className="boton"
+          onClick={() => nextPage()}
+        >
+          Next
+        </button>
+      </div>
       <div className="ml-24 mt-5 mr-24">
-        <div>
-          <div className="font-gloria flex justify-between ml-[72%] mt-7 bg-green-800 rounded-md border-2 border-yellow-500 p-1 mb-[-20px]">
-            <button
-              className="border-2 p-2 border-green-900 rounded-md hover:bg-green-600"
-              onClick={() => previousPage()}
-            >
-              Previous
-            </button>
-            <p className="border-1 p-2 rounded-md">
-              Page {page} of {pageCount}
-            </p>
-            <button
-              className="border-2 border-green-900 p-2 rounded-md hover:bg-green-600"
-              onClick={() => nextPage()}
-            >
-              Next
-            </button>
-          </div>
-        </div>
         <div>
           {episodes.map((episode) => (
             <Suspense fallback={Cargando}>

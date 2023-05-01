@@ -30,11 +30,10 @@ const Layout = () => {
         <Outlet/>
         <div>
           <div className='footer'>
-            <div className='w-1/2 text-sm text-white font-gloria'>
-              <p>Designed by Andrés Murillo</p>
-              <p>Forbidden any direct reproduction of the code used in this project.</p>
+            <div className='footer-information'>
+              <p>Designed by Andrés Murillo.<br/>Forbidden any direct reproduction of the code used in this project.</p>
             </div>
-            <div className='w-1/2 flex-col text-white font-gloria'>
+            <div className='user-container'>
               <div className='flex flex-row '>
                 <img src={Facebook} className="footer-logo "/><p>{usuarioRedes}</p>
               </div>

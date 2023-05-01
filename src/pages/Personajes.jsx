@@ -9,6 +9,9 @@ import {
 import Cargando from '../components/Cargando'
 const Personaje = lazy(()=>import ("../components/Personaje"))
 
+//Styles
+import '../css/cuentaPaginas.css'
+
 const Personajes = () => {
   const [arrayPersonajes, setArrayPersonajes] = useState([]);
   const [info, setInfo] = useState("");
@@ -45,14 +48,16 @@ const Personajes = () => {
 
   return (
     <>
-      <div className="font-gloria flex justify-between ml-[68%] mr-[8%] mt-7 bg-green-800 rounded-md border-2 border-yellow-500 p-1 mb-[-20px]">
-        <button className="border-2 p-2 border-green-900 rounded-md hover:bg-green-600" onClick={() => paginaAnterior()}>
+      <div className="contenedor-top">
+        <button className="boton" onClick={() => paginaAnterior()}>
           Previous
         </button>
-        <p className="border-1 p-2 rounded-md">
-          Page {pagina} of {info}
-        </p>
-        <button className="border-2 border-green-900 p-2 rounded-md hover:bg-green-600" onClick={() => paginaSiguiente()}>
+        <div>
+          <p className="page-counter">
+            Page {pagina} of {info}
+          </p>
+        </div>
+        <button className="boton" onClick={() => paginaSiguiente()}>
           Next
         </button>
       </div>
@@ -63,14 +68,14 @@ const Personajes = () => {
           </Suspense>
         ))}
       </div>
-      <div className="font-gloria flex justify-between ml-[68%] mr-[8%] bg-green-800 rounded-md border-2 border-yellow-500 p-1 mt-[-20px] mb-5">
-        <button className="border-2 p-2 border-green-900 rounded-md hover:bg-green-600" onClick={() => paginaAnterior()}>
+      <div className="contenedor-end">
+        <button className="boton" onClick={() => paginaAnterior()}>
           Previous
         </button>
-        <p className="border-1 p-2 rounded-md">
+        <p className="page-counter">
           Page {pagina} of {info}
         </p>
-        <button className="border-2 border-green-900 p-2 rounded-md hover:bg-green-600" onClick={() => paginaSiguiente()}>
+        <button className="boton" onClick={() => paginaSiguiente()}>
           Next
         </button>
       </div>

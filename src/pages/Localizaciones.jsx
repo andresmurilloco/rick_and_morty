@@ -6,6 +6,9 @@ import { getLocationsInfo, getLocations } from '../api/api';
 import Cargando from '../components/Cargando'
 const Localizacion = lazy(()=>import('../components/Localizacion'))
 
+//Styles
+import '../css/cuentaPaginas.css'
+
 const Localizaciones = () => {
   const [localizaciones, setLocalizaciones] = useState([]);
   const [pageCount, setPageCount] = useState()
@@ -35,33 +38,31 @@ const Localizaciones = () => {
 
   const previousPage = () => {
     const math = 1;
-    if (page > 0) {
+    if (page > 1) {
       setPage(page - math);
     }
   };
 
   return (
     <>
+      <div className="contenedor-top">
+        <button
+          className="boton"
+          onClick={() => previousPage()}
+        >
+          Previous
+        </button>
+        <p className="page-counter">
+          Page {page} of {pageCount}
+        </p>
+        <button
+          className="boton"
+          onClick={() => nextPage()}
+        >
+          Next
+        </button>
+      </div>
       <div className='ml-24 mt-5 mr-24'>
-      <div>
-          <div className="font-gloria flex justify-between ml-[72%] mt-7 bg-green-800 rounded-md border-2 border-yellow-500 p-1 mb-[-20px]">
-            <button
-              className="border-2 p-2 border-green-900 rounded-md hover:bg-green-600"
-              onClick={() => previousPage()}
-            >
-              Previous
-            </button>
-            <p className="border-1 p-2 rounded-md">
-              Page {page} of {pageCount}
-            </p>
-            <button
-              className="border-2 border-green-900 p-2 rounded-md hover:bg-green-600"
-              onClick={() => nextPage()}
-            >
-              Next
-            </button>
-          </div>
-        </div>
         {localizaciones.map(localizacion=>(
           <Suspense fallback={Cargando}>
             <Localizacion localizacion={localizacion} key={localizacion.id}></Localizacion>

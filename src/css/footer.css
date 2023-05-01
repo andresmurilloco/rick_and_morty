@@ -13,7 +13,20 @@
   padding: 5px;
 }
 
-.user-font{}
+.user-container{
+  display: flex;
+  width: 50%;
+  font-family: 'Covered By Your Grace', cursive;
+  color: white;
+  flex-direction: column;
+}
+
+.footer-information{
+  display: flex;
+  width: 50%;
+  font-family: 'Covered By Your Grace', cursive;
+  color: white;
+}
 
 .footer-logo{
   width: 25px;
@@ -33,5 +46,15 @@
       margin-left: 20px;
       margin-right: 20px;
       max-width: 75%;
+      flex-direction: column;
+  }
+  .footer-information{
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .user-container{
+    width: 100%;
+    padding-left: 25%;
   }
 }
