@@ -62,9 +62,7 @@ const Capitulos = () => {
       <div className="ml-24 mt-5 mr-24">
         <div>
           {episodes.map((episode) => (
-            <Suspense fallback={Cargando}>
               <Capitulo episodio={episode} key={episode.id} />
-            </Suspense>
           ))}
         </div>
         <div></div>
