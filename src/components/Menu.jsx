@@ -24,6 +24,7 @@ const Menu = () => {
                     <Link to='/characters' className='menu-compacto'>Characters</Link>
                     <Link to='/episodes' className='menu-compacto'>Episodes</Link>
                     <Link to='/locations' className='menu-compacto'>Locations</Link>
+                    <Link to='/statistics' className='menu-compacto'>Statistics</Link>
                     <Link to='/about' className='menu-compacto'>About</Link>
                 </nav> 
                 : ""}
@@ -34,6 +35,7 @@ const Menu = () => {
                     <Link to='/characters' className='menu-extendido'>Characters</Link>
                     <Link to='/episodes' className='menu-extendido'>Episodes</Link>
                     <Link to='/locations' className='menu-extendido'>Locations</Link>
+                    <Link to='/statistics' className='menu-compacto'>Statistics</Link>
                     <Link to='/about' className='menu-extendido'>About</Link>
                 </nav>
             </aside>

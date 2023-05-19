@@ -15,6 +15,7 @@ import Personajes from './pages/Personajes'
 import Localizaciones from './pages/Localizaciones'
 import Detallado from './pages/Detallado'
 import Cargando from './components/Cargando'
+import Statistics from './pages/Statistics'
 
 const router = createBrowserRouter([{
   path:'/',
@@ -45,8 +46,8 @@ const router = createBrowserRouter([{
       element:<Detallado/>
     },
     {
-      path:'/loading',
-      element:<Cargando/>
+      path:'/statistics',
+      element:<Statistics/>
     },
   ]
 }])
