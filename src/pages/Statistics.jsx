@@ -66,15 +66,17 @@ const Statistics = () => {
       )
       setDimension(
         {
-          labels: dataGenre.map((data)=>{data.dimension;return data.dimension}),
+          labels: dataDimensions.map((data)=>{data.dimension;return data.dimension}),
           datasets:[{
             label: "Locations per Dimension",
-            data: dataGenre.map((data)=>{data.count;return data.count})
+            data: dataDimensions.map((data)=>{data.count;return data.count})
           }]
         }
       )
     }
   }, [dataDimensions])
+
+  console.log(dataDimensions);
 
   return (
     <>
@@ -99,8 +101,8 @@ const Statistics = () => {
                 <BarInhabitants chartData={inhabitants}></BarInhabitants>
             </div>
             <div className=' w-[92%] bg-white rounded-md mt-5'>
-                <h1 className='text-3xl text-center font-gloria bold'>Locations per dimension</h1>
-                <BarInhabitants chartData={inhabitants}></BarInhabitants>
+                <h1 className='text-3xl text-center font-gloria bold'>Locations count per dimension</h1>
+                <BarInhabitants chartData={dimension}></BarInhabitants>
             </div>
           </div>
         </div>
