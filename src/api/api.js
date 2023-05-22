@@ -86,3 +86,97 @@ export async function speciesSorter(){
     }
     return arrayData;
 }
+
+export async function getCharacterGender(){
+    let pageCounter = 1;
+    let genderArray = [];
+    const result = await axios(`https://rickandmortyapi.com/api/character/`);
+    const counterLimiter = result.data.info.count;
+    while (pageCounter <= counterLimiter) {
+        const objects = await axios(`https://rickandmortyapi.com/api/character/${pageCounter}`);
+        genderArray.push(objects.data.gender);
+        pageCounter++;
+    }
+    return (genderArray);
+}
+
+export async function genderSorter(){
+    let arrayGender = await getCharacterGender();
+    let setNotRepeated = new Set(arrayGender);
+    let arrayDictionary = Array.from(setNotRepeated);
+    let arrayData = [];
+    for (let index = 0; index < arrayDictionary.length; index++) {
+        let tempObject = {
+            gender:arrayDictionary[index],
+            count:0
+        }
+        arrayData.push(tempObject);
+    }
+    for (let index = 0; index < arrayGender.length; index++) {
+        for (let i = 0; i < arrayData.length; i++) {
+            if (arrayGender[index] === arrayData[i].gender) {
+                arrayData[i].count++;
+            }
+        }
+    }
+    return arrayData;
+}
+
+export async function getDimensions(){
+    let pageCounter = 1;
+    let dimensionArray = [];
+    const result = await axios(`https://rickandmortyapi.com/api/location/`);
+    const counterLimiter = result.data.info.count;
+    const pageLimiter = result.data.info.pages;
+    while (pageCounter <= pageLimiter) {
+        const objects = await axios(`https://rickandmortyapi.com/api/location?page=${pageCounter}`);
+        for (let index = 0; index < objects.data.results.length; index++) {
+            dimensionArray.push(objects.data.results[index].dimension);
+        }
+        pageCounter++;
+    };
+    return (dimensionArray);
+}
+
+export async function dimensionSorter(){
+    let arrayDimensions = await getDimensions();
+    let setNotRepeated = new Set(arrayDimensions);
+    let arrayDictionary = Array.from(setNotRepeated);
+    let arrayData = [];
+    for (let index = 0; index < arrayDictionary.length; index++) {
+        let tempObject = {
+            dimension:arrayDictionary[index],
+            count:0
+        }
+        arrayData.push(tempObject);
+    }
+    for (let index = 0; index < arrayDimensions.length; index++) {
+        for (let i = 0; i < arrayData.length; i++) {
+            if (arrayDimensions[index] === arrayData[i].dimension) {
+                arrayData[i].count++;
+            }
+        }
+    }
+    console.log(arrayData);
+    return arrayData;
+}
+
+export async function getInhabitants(){
+    let pageCounter = 1;
+    let inhabitantsArray = [{}];
+    const result = await axios(`https://rickandmortyapi.com/api/location/`);
+    const counterLimiter = result.data.info.count;
+    while (pageCounter <= counterLimiter) {
+        const objects = await axios(`https://rickandmortyapi.com/api/location/${pageCounter}`);
+        if(objects.data.residents.length != 0){
+            inhabitantsArray.push(
+                {
+                    location: objects.data.name,
+                    inhabitants: objects.data.residents.length
+                }
+                );
+        }
+        pageCounter++;
+    }
+    return (inhabitantsArray);
+}
