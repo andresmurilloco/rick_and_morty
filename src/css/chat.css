@@ -1,0 +1,17 @@
+.chat-compacted{
+    background-color: aliceblue;
+    position: fixed;
+    margin-right: 25px;
+    margin-bottom: 15px;
+    width: 150px;
+    height: 40px;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    z-index: 3;
+    border-radius: 5px;
+}
+
+.chat-expanded{
+    
+}

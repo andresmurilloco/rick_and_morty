@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { Outlet, Link, useLocation } from 'react-router-dom'
-import styled from '@emotion/styled'
+import Chat from './Chat'
 
 //CSS
 import '../css/footer.css'
@@ -28,6 +28,7 @@ const Layout = () => {
             <Menu></Menu>
         </div>
         <Outlet/>
+        <Chat></Chat>
         <div>
           <div className='footer'>
             <div className='footer-information'>
